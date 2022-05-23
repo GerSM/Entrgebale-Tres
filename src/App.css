@@ -1,38 +1,161 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: black;
+}
 .App {
   text-align: center;
+  color: aliceblue;
+  @import url('https://fonts.googleapis.com/css2?family=Mansalva&family=ZCOOL+KuaiLe&display=swap');
+}
+/* cabecera */
+.header{
+  top: 0;
+  display: flex;
+  height: 350px;
+  padding: 0px;
+  gap: 10px;
+  background-image: url(./img/image\ 3.jpg); 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto; 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header .img-bck{
+  z-index: 1;
+  width: 250px;
+  height: 150px;
+  margin: 55px auto;
 }
+/*body*/
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.body{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'ZCOOL KuaiLe', cursive;
+}
+
+.body .location-information{
+  margin: 50px;
+  padding: 60px;
+}
+
+/*buscador*/
+.searcher{
+  margin: 25px;
+  padding: 15px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.browser{
+  position: absolute;
+  padding: 5px;
+}
+
+.browser input{
+  width: 0;
+  height: 40px;
+  padding: 0 20px;
+  font-size: 18px;
   color: white;
+  background-color: #1fd100;
+  outline: none;
+  border: 1px solid silver;
+  border-radius: 30px;
+  transition: all 0.6s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.btn{
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgb(78, 0, 151);
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  text-align: center;
+  color: aliceblue;
+  border-radius: 50%;
+  border: 1px solid silver;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.browser:hover input{
+  width: 300px;
+} 
+
+.browser input:focus{
+  width: 300px;
+}  
+
+/* li */
+
+li{
+  position: relative;
+  width: 1100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30px;
+}
+
+/* Cards */
+.card{
+  position: relative;
+  max-width: 300px;
+  height: 210px;
+  background-color: #1fd100ec;
+  margin: 30px 10px;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0.5px 20px rgba(0, 0, 0, 0.5);
+  transition: .3s ease-in-out;
+  border-radius: 25px;
+}
+
+.card:hover{
+  height: 450px;
+}
+.card .card-img{
+  position: relative;
+  width: 260px;
+  height: 260px;
+  top: -60px;
+  left: 5px;
+  z-index: 1;
+  box-shadow: 0.5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card .card-img img{
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+
+
+.card .card-text{
+  position: relative;
+  margin-top: -140px;
+  padding: 10px 15px;
+  text-align: center;
+  visibility: hidden;
+  color: aliceblue;
+  opacity: 0;
+  transition: .3s ease-in-out;
+  height: 100%;
+  border-radius: 25px;
+}
+
+.card:hover .card-text{
+  visibility: visible;
+  opacity: 1;
+  margin-top: -40px;
+  transition-delay: .3s;
 }
